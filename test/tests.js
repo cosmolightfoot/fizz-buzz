@@ -13,10 +13,10 @@ function fizzBuzz(number) {
             result += ', fizz';
         }
         else {
-            result += ', ' + i.toString();
+            result += ', ' + i;
         }
-        return result;
     }
+    return result;
 }
 
 
@@ -50,15 +50,22 @@ function fizzBuzz(number) {
 // });
 test('analyzes first i value and places it in result', function(assert) {
     const number = 1;
-    const expect = '0, 1';
     const results = fizzBuzz(number);
+    const expect = '0, 1';
     
     assert.equal(results, expect);
 });
 test('analyzes first 3 i values and places it in result', function(assert) {
     const number = 3;
-    const expect = '0, 1, 2, fizz';
     const results = fizzBuzz(number);
+    const expect = '0, 1, 2, fizz';
+    
+    assert.equal(results, expect);
+});
+test('analyzes first 16 i values and places it in result', function(assert) {
+    const number = 16;
+    const results = fizzBuzz(number);
+    const expect = '0, 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz, 16';
     
     assert.equal(results, expect);
 });
